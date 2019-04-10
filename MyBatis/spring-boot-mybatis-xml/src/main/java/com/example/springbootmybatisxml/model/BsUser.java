@@ -1,5 +1,7 @@
 package com.example.springbootmybatisxml.model;
 
+import com.example.springbootmybatisxml.enums.BsUserSexEnum;
+
 import java.io.Serializable;
 
 public class BsUser implements Serializable {
@@ -8,6 +10,15 @@ public class BsUser implements Serializable {
     private String userName;
     private String passWord;
     private String email;
+    private BsUserSexEnum userSex;
+
+    public BsUserSexEnum getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(BsUserSexEnum userSex) {
+        this.userSex = userSex;
+    }
 
     public BsUser() {
         super();
@@ -43,5 +54,15 @@ public class BsUser implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", userSex=" + userSex +
+                '}';
     }
 }
